@@ -75,6 +75,7 @@ address{
 
 .link{
     text-decoration: none;
+    cursor: pointer;
 }
 
 .head{
@@ -156,11 +157,11 @@ header .container{
 }
 
 .contacts{
+    display: flex;
     margin-left: auto;
 }
 
 .contacts .item{
-    display: inline-block;
     padding-top: 32px;
     padding-bottom: 32px;
 }
@@ -176,7 +177,9 @@ header .container{
 
 /*E-mail и телефон*/
 .mail-head,
-.tel-head{ 
+.tel-head{
+    display: flex;
+    align-items: center;
     color: var(--second-text-color);
     font-weight: 500;
 }
@@ -193,7 +196,8 @@ header .container{
     margin-right: 10px;
 }
 
-.contacts-img:hover{
+.contacts-img:hover,
+.contacts-img:focus{
     fill: var(--active-link-hover-color);
 }
 
@@ -209,6 +213,7 @@ header .container{
     rgba(47, 48, 58, 0.4)),
     url(../images/bg-img-order.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
     border: 1px solid var(--border-order-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -249,7 +254,6 @@ header .container{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: none;
-    cursor: pointer;
 }
 
 .order-btn:hover,
@@ -287,16 +291,14 @@ header .container{
 
 .div-strongths-img{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 270px;
     height: 120px;
-    padding: 25px 100px;
     background-color: var(--bg-color-section-white);
 }
 
 .strongths-img{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
     width: 70px;
     height: 70px;
     fill: currentColor;
@@ -370,18 +372,14 @@ header .container{
 
 .team-name{
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
  /*Соц сети команды*/
 .team-networks{
     display: flex;
     margin-top: 16px;
-    margin-bottom: 30px;
-    margin-left: 32px;
-    margin-right: 32px;
-    padding: 0;
-    color: var(--networks-img-color);
-    align-items: center;
+    justify-content: center;
 }
 
 .team-networks > .item + .item{
@@ -396,15 +394,16 @@ header .container{
     background-color: var(--main-bg-color);
     border-radius: 50%;
     align-items: center;
+    justify-content: center;
 }
 
-.team-networks a:hover{
+.team-networks a:hover,
+.team-networks a:focus{
     color: var(--main-bg-color);
     background-color: var(--active-link-hover-color);
 }
 
 .team-networks-img{
-    margin: 0 auto;
     width: 20px;
     height: 20px;
     fill: currentColor;
@@ -417,16 +416,17 @@ header .container{
 
 .clients-link{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 170px;
     height: 92px;
-    padding: 16px 32px;
     border: 1px solid var(--clients-color);
-    border-radius: 5px;
+    border-radius: 4px;
     color: var(--clients-color);
-    cursor: pointer;
 }
 
-.clients-link:hover{
+.clients-link:hover,
+.clients-link:focus{
     color: var(--active-link-hover-color);
     border-color: var(--active-link-hover-color);
 }
@@ -436,8 +436,8 @@ header .container{
 }
 
 .clients-img{
-    margin: auto;
-    align-items: center;
+    width: 106px;
+    height: 60px;
     fill: currentColor;
 }
 
@@ -450,7 +450,7 @@ footer{
 
 footer .container{
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .logo-address{
@@ -489,12 +489,8 @@ footer .container{
 }
 
 /*Соц сети footer*/
-.footer-networks{
-    display: flex;
-    flex-direction: column;
-}
 
-.footer-networks span{
+.footer-networks p{
     font-weight: 700;
     line-height: 16px;
     text-transform: uppercase;
@@ -503,7 +499,6 @@ footer .container{
 
 .footer-networks-list{
     display: flex;
-    flex-direction: row;
     margin-top: 20px;
 }
 
@@ -519,14 +514,15 @@ footer .container{
         background-color: var(--second-text-color);
         border-radius: 50%;
         align-items: center;
+        justify-content: center;
 }
 
-.footer-networks a:hover{
+.footer-networks a:hover,
+.footer-networks a:focus{
     background-color: var(--active-link-hover-color);
 }
 
 .footer-networks-img{
-    margin: 0 auto;
     width: 20px;
     height: 20px;
     fill: currentColor;
@@ -565,7 +561,6 @@ footer .container{
     
     border-radius: 4px;
     border-style: none;
-    cursor: pointer;
 }
 
 .navigate-btn:hover,
@@ -595,20 +590,33 @@ footer .container{
     margin-bottom: 0;
 }
 
+.example-link{
+    display: block;
+    color: var(--main-text-color);
+    border: 1px solid var(--border-example-color);
+}
+
+.example-link:hover,
+.example-link:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .example-name{
     padding: 20px 24px;
     border: 1px solid var(--border-example-color);
     border-top: none;
 }
 
-.example-list h3{
+.example-name h3{
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
 }
 
-.example-list p{
+.example-name p{
     margin-top: 4px;
     color: var(--second-text-color);
     font-size: 16px;
